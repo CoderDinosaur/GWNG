@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>注册页_2</title>
+		<style>
+			body{
+				margin: 0px;
+			}
+			input{
+				border: 1px solid rgb(180, 180, 180);
+				border-radius: 8px;
+				font-size: 16px;
+				height: 26px;
+			}
+			.rigisterbg{
+				width: 375px;
+				height: 1000px;
+				background-image:url(img/registerbg.jpg);
+				background-repeat: no-repeat;
+			}
+			.topziti{
+				width: 335px;
+				padding-top: 120px;
+				padding-left: 40px;
+			}
+			.rgtable{
+				width: 335px;
+				padding-left: 40px;
+				padding-top: 30px;
+				font-size: 20px;
+			}
+			#next{
+				width: 270px; /* 宽度 */
+				height: 40px; /* 高度 */
+				border-width: 0px; /* 边框宽度 */
+				border-radius: 3px; /* 边框半径 */
+				background: #1E90FF; /* 背景颜色 */
+				cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+				outline: none; /* 不显示轮廓线 */
+				font-family: Microsoft YaHei; /* 设置字体 */
+				color: white; /* 字体颜色 */
+				font-size: 17px; /* 字体大小 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rigisterbg">
+			<div class="topziti"><img src="img/gxngl.png" width="300px"/></div>
+			<div class="rgtable">
+				<form>
+					<table>
+						<th colspan="2">请填写注册信息</th>
+						<tbody>
+							<tr>
+								<td>姓名</td>
+								<td><input type="text" /></td>
+							</tr>
+							<tr></tr>
+							<tr></tr>
+							<tr>
+								<td>性别</td>
+								<td>
+									<input type="radio" name="rnd" value="男" />男
+									<input type="radio" name="rnd" value="女" />女
+								</td>
+							</tr>
+							<tr></tr>
+							<tr></tr>
+							<tr>
+								<td>职业</td>
+								<td>
+									<input type="radio" name="rnd" value="学生" />学生
+									<input type="radio" name="rnd" value="教职工" />教职工
+								</td>
+							</tr>
+							<tr></tr>
+							<tr></tr>
+							<tr>
+								<td>宿舍号</td>
+								<td>
+									<input type="text" />
+								</td>
+							</tr>
+							<tr></tr>
+							<tr></tr>
+							<tr>
+								<td>班级</td>
+								<td>
+									<input type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td>手机号码</td>
+								<td>
+									<input type="text" />
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2">
+									<br /><br />
+									<a href="index.html">
+										<input type="button" id="next" value="直接登录" />
+									</a>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
