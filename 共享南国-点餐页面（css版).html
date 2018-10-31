@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>点餐页面</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+
+.floor {                   //楼层
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 400px;
+	height: 100px;
+}
+
+.goods {                   //菜品
+	position:absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 200px;
+	height: 400px;
+}
+
+.money {                   //结算
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 400px;
+	height: 100px;
+}
+
+.store {               //店铺列表
+	position: absolute;
+	font:1em 幼圆 bold;
+	border:0.5px solid;
+	width: 120px;
+	height: 400px;
+	float: left;
+}
+
+.store_1 {               //"店铺列表"文本
+	position: absolute;
+	font:1em 幼圆 bold;
+	border:0.5px solid;
+	width: 120px;
+	height: 40px;
+	float: left;
+}
+
+.store_2 {               //各店铺
+	position: absolute;
+	font:1em 幼圆 bold;
+	border:0.5px solid;
+	width: 120px;
+	height: 360px;
+	float: left;
+}
+
+.anystore{
+	font:1em 幼圆 bold;
+	border:0.5px solid;
+	width: 120px;
+	height: 60px;
+}
+
+.anygoods{
+	border:0.5px solid;
+	width: 70px;
+	height: 70px;
+	margin-left: 10px;
+	margin-top: 10px;
+	float: left;
+	clear：left;
+}
+
+.qingdan {                   //清单
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 120px;
+	height: 100px;
+	float: left;
+	clear：left;
+}
+
+.heji {                   //合计
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 120px;
+	height: 100px;
+	float: left;
+	clear：left;
+}
+
+.queren {                   //确认下单
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 157px;
+	height: 100px;
+	float: left;
+	clear：left;
+}
+
+</style>
+<script type="text/javascript">
+  function change_floor()
+	{
+		var target_0=document.getElementById("select_floor").value;
+		var target_1=document.getElementById("floor_1");
+		var target_2=document.getElementById("floor_2");
+		var target_3=document.getElementById("floor_3");
+		var target_4=document.getElementById("floor_4");
+		if(target_0=="1")
+		{
+			target_1.style.display="block";
+			target_2.style.display="none";
+			target_3.style.display="none";
+			target_4.style.display="none";
+		}
+		else	if(target_0=="2")
+		{
+			target_2.style.display="block";
+			target_1.style.display="none";
+			target_3.style.display="none";
+			target_4.style.display="none";
+		}
+		else if(target_0=="3")
+		{
+			target_3.style.display="block";
+			target_1.style.display="none";
+			target_2.style.display="none";
+			target_4.style.display="none";
+		}
+		else if(target_0=="4")
+		{
+			target_4.style.display="block";
+			target_1.style.display="none";
+			target_2.style.display="none";
+			target_3.style.display="none";
+		}
+	}
+</script>
+
+</head>
+<body>
+	<div class=floor>
+	<P></p>
+	<form action="" method="post">
+		   <label>选择楼层:</label>
+			 <select id="select_floor">
+	 			 <option value="1">一</option>
+	 			 <option value="2">二</option>
+	 			 <option value="3">三</option>
+	 			 <option value="4">四</option>
+	 		</select>
+
+	 		<input type="button" value="切换" onclick="change_floor()" >
+
+			 <p> 价格
+			<input name="jiage_1" type="text" size="5" maxlength=5>
+			~
+			<input name="jiage_2" type="text" size="5" maxlength=5>
+			<input name="chaxun" type="submit" value="查询">
+      </p>
+			</form>
+
+	</div>
+
+	<div class=store>
+		<div class=store_1>店铺列表 </div>
+		<div class=store_2 style="overflow:scroll; overflow-x: hidden; width:120px; height:360px">
+     	<div id=floor_1>
+		  	<div class="anystore">1.1</div>
+		 		<div class="anystore">1.2</div>
+		  	<div class="anystore">1.3</div>
+		  	<div class="anystore">1.4</div>
+	  		<div class="anystore">1.5</div>
+				<div class="anystore">1.6</div>
+				<div class="anystore">1.7</div>
+				<div class="anystore">1.8</div>
+			</div>
+
+			<div id=floor_2>
+		  	<div class="anystore">2.1</div>
+		 		<div class="anystore">2.2</div>
+		  	<div class="anystore">2.3</div>
+		  	<div class="anystore">2.4</div>
+	  		<div class="anystore">2.5</div>
+				<div class="anystore">2.6</div>
+				<div class="anystore">2.7</div>
+				<div class="anystore">2.8</div>
+			</div>
+
+			<div id=floor_3>
+		  	<div class="anystore">3.1</div>
+		 		<div class="anystore">3.2</div>
+		  	<div class="anystore">3.3</div>
+		  	<div class="anystore">3.4</div>
+	  		<div class="anystore">3.5</div>
+				<div class="anystore">3.6</div>
+				<div class="anystore">3.7</div>
+				<div class="anystore">3.8</div>
+			</div>
+
+			<div id=floor_4>
+		  	<div class="anystore">4.1</div>
+		 		<div class="anystore">4.2</div>
+		  	<div class="anystore">4.3</div>
+		  	<div class="anystore">4.4</div>
+	  		<div class="anystore">4.5</div>
+				<div class="anystore">4.6</div>
+				<div class="anystore">4.7</div>
+				<div class="anystore">4.8</div>
+			</div>
+
+		 </div>
+	 </div>
+
+	<div class=goods style="overflow:scroll; overflow-x: hidden; width:280px; height:400px">
+    <div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+		<div class="anygoods">
+		</div>
+
+	</div>
+
+	<div class=money>
+	 <div class=qingdan>
+		 <form action="" method="post">
+		 <input name="yixuanze" type=button value="已选择">
+	 </form>
+	 </div>
+
+	 <div class=heji>
+		 合计：
+	 </div>
+	<div class=queren>
+     <form action="" method="post">
+		<input name="querenyuding" type=submit value="确认预订">
+	</form>
+ </div>
+	</div>
+
+</body>
+</html>
