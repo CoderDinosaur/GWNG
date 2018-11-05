@@ -14,7 +14,7 @@
 	height: 100px;
 }
 
-.goods {                   //菜品
+.goods {                   //菜品框
 	position:absolute;
 	font:1em 幼圆 bold;
 	border: 0.5px solid;
@@ -30,21 +30,23 @@
 	height: 100px;
 }
 
-.store {               //店铺列表
+.store {               //店铺列表框
 	position: absolute;
 	font:1em 幼圆 bold;
 	border:0.5px solid;
-	width: 120px;
+	width: 130px;
 	height: 400px;
 	float: left;
 }
 
-.store_1 {               //"店铺列表"文本
+.store_1 {
+	padding-top: 8px;     //"店铺列表"文本
 	position: absolute;
+	text-align: center;
 	font:1em 幼圆 bold;
 	border:0.5px solid;
-	width: 120px;
-	height: 40px;
+	width: 130px;
+	height: 30px;
 	float: left;
 }
 
@@ -52,16 +54,18 @@
 	position: absolute;
 	font:1em 幼圆 bold;
 	border:0.5px solid;
-	width: 120px;
+	width: 130px;
 	height: 360px;
 	float: left;
 }
 
 .anystore{
+	padding-top: 8px;
+	text-align: center;
 	font:1em 幼圆 bold;
 	border:0.5px solid;
-	width: 120px;
-	height: 60px;
+	width: 130px;
+	height: 30px;
 }
 
 .anygoods{
@@ -78,7 +82,7 @@
 	position: absolute;
 	font:1em 幼圆 bold;
 	border: 0.5px solid;
-	width: 120px;
+	width: 130px;
 	height: 100px;
 	float: left;
 	clear：left;
@@ -88,7 +92,7 @@
 	position: absolute;
 	font:1em 幼圆 bold;
 	border: 0.5px solid;
-	width: 120px;
+	width: 110px;
 	height: 100px;
 	float: left;
 	clear：left;
@@ -156,9 +160,7 @@
 	 			 <option value="3">三</option>
 	 			 <option value="4">四</option>
 	 		</select>
-
 	 		<input type="button" value="切换" onclick="change_floor()" >
-
 			 <p> 价格
 			<input name="jiage_1" type="text" size="5" maxlength=5>
 			~
@@ -166,60 +168,57 @@
 			<input name="chaxun" type="submit" value="查询">
       </p>
 			</form>
-
 	</div>
 
 	<div class=store>
 		<div class=store_1>店铺列表 </div>
-		<div class=store_2 style="overflow:scroll; overflow-x: hidden; width:120px; height:360px">
+		<div class=store_2 style="overflow:scroll; overflow-x: hidden; width:130px; height:360px">
      	<div id=floor_1>
-		  	<div class="anystore">1.1</div>
-		 		<div class="anystore">1.2</div>
-		  	<div class="anystore">1.3</div>
-		  	<div class="anystore">1.4</div>
-	  		<div class="anystore">1.5</div>
-				<div class="anystore">1.6</div>
-				<div class="anystore">1.7</div>
-				<div class="anystore">1.8</div>
+		  	<div class="anystore">东北大饼</div>
+		 		<div class="anystore">潮汕风味馆</div>
+		  	<div class="anystore">隆江猪脚饭</div>
+		  	<div class="anystore">潮汕风味</div>
+	  		<div class="anystore">沉香美食</div>
+				<div class="anystore">妈妈焖</div>
+				<div class="anystore">一料理</div>
+				<div class="anystore">风味之屋</div>
+				<div class="anystore">金早绿点</div>
+				<div class="anystore">煲仔饭</div>
+				<div class="anystore">韩国拌饭</div>
+				<div class="anystore">蒸品</div>
+				<div class="anystore">订食</div>
+				<div class="anystore">牛状元</div>
+				<div class="anystore">魔法沙拉</div>
+				<div class="anystore">杭州风味</div>
+				<div class="anystore">家乐煲</div>
 			</div>
 
 			<div id=floor_2>
-		  	<div class="anystore">2.1</div>
-		 		<div class="anystore">2.2</div>
-		  	<div class="anystore">2.3</div>
-		  	<div class="anystore">2.4</div>
-	  		<div class="anystore">2.5</div>
-				<div class="anystore">2.6</div>
-				<div class="anystore">2.7</div>
-				<div class="anystore">2.8</div>
+		  	<div class="anystore">大众菜品</div>
+		 		<div class="anystore">大众餐系列-1</div>
+		  	<div class="anystore">蒸笼饭</div>
+		  	<div class="anystore">大众餐系列-2</div>
+	  		<div class="anystore">粤式风味</div>
+				<div class="anystore">桂林风味</div>
+				<div class="anystore">兰州拉面</div>
+				<div class="anystore">西安风味</div>
 			</div>
 
 			<div id=floor_3>
-		  	<div class="anystore">3.1</div>
-		 		<div class="anystore">3.2</div>
-		  	<div class="anystore">3.3</div>
-		  	<div class="anystore">3.4</div>
-	  		<div class="anystore">3.5</div>
-				<div class="anystore">3.6</div>
-				<div class="anystore">3.7</div>
-				<div class="anystore">3.8</div>
+		  	<div class="anystore">大众餐</div>
+		 		<div class="anystore">中式笼仔饭</div>
+		  	<div class="anystore">桂林米粉/河粉</div>
+		  	<div class="anystore">腊味套餐</div>
 			</div>
 
 			<div id=floor_4>
-		  	<div class="anystore">4.1</div>
-		 		<div class="anystore">4.2</div>
-		  	<div class="anystore">4.3</div>
-		  	<div class="anystore">4.4</div>
-	  		<div class="anystore">4.5</div>
-				<div class="anystore">4.6</div>
-				<div class="anystore">4.7</div>
-				<div class="anystore">4.8</div>
+		  	<div class="anystore">从一品中餐厅</div>
 			</div>
 
 		 </div>
 	 </div>
 
-	<div class=goods style="overflow:scroll; overflow-x: hidden; width:280px; height:400px">
+	<div class=goods style="overflow:scroll; overflow-x: hidden; width:270px; height:400px">
     <div class="anygoods">
 		</div>
 		<div class="anygoods">

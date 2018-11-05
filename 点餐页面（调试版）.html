@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>点餐页面</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+
+.floor {                   //楼层
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 400px;
+	height: 100px;
+}
+
+.goods {                   //菜品框
+	position:absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 200px;
+	height: 400px;
+}
+
+.money {                   //结算
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 400px;
+	height: 100px;
+}
+
+.store {               //店铺列表框
+	position: absolute;
+	font:1em 幼圆 bold;
+	border:0.5px solid;
+	width: 130px;
+	height: 400px;
+	float: left;
+}
+
+.store_1 {
+	padding-top: 8px;     //"店铺列表"文本
+	position: absolute;
+	text-align: center;
+	font:1em 幼圆 bold;
+	border:0.5px solid;
+	width: 130px;
+	height: 30px;
+	float: left;
+}
+
+.store_2 {               //各店铺
+	position: absolute;
+	font:1em 幼圆 bold;
+	border:0.5px solid;
+	width: 130px;
+	height: 360px;
+	float: left;
+}
+
+.anystore{
+	padding-top: 8px;
+	text-align: center;
+	font:1em 幼圆 bold;
+	border:0.5px solid;
+	width: 130px;
+	height: 30px;
+}
+
+.anygoods{
+	border:0.5px solid;
+	width: 70px;
+	height: 70px;
+	margin-left: 10px;
+	margin-top: 10px;
+	float: left;
+	clear：left;
+}
+
+.qingdan {                   //清单
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 130px;
+	height: 100px;
+	float: left;
+	clear：left;
+}
+
+.heji {                   //合计
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 110px;
+	height: 100px;
+	float: left;
+	clear：left;
+}
+
+.queren {                   //确认下单
+	position: absolute;
+	font:1em 幼圆 bold;
+	border: 0.5px solid;
+	width: 157px;
+	height: 100px;
+	float: left;
+	clear：left;
+}
+
+</style>
+<script type="text/javascript">
+  function change_floor()
+	{  //alert(floorstore.children.length);
+		var tar=document.getElementById("select_floor").value;
+		if(tar=="pre")
+		 {
+			 for(var j=0;j<4;j++)
+ 	    {
+ 		  for (var x=0;x<floorstore.children[j].children.length;x++)
+ 				floorstore.children[j].children[x].style.display="block";
+ 		   }
+			 return;
+ 	    }
+
+	  	for(var j=0;j<4;j++)
+	   {
+		  for (var x=0;x<floorstore.children[j].children.length;x++)
+				floorstore.children[j].children[x].style.display="none";
+			for(i=0;i<floorstore.children[tar].children.length;i++)
+				floorstore.children[tar].children[i].style.display="block";
+		  }
+	  }
+
+	function showgoods(num)
+	{ //alert(goods.children.length);
+			for(var j=0;j<goods.children.length;j++)
+		 {
+			for (var x=0;x<goods.children[j].children.length;x++)
+					goods.children[j].children[x].style.display="none";
+			 for(i=0;i<goods.children[num].children.length;i++)
+					goods.children[num].children[i].style.display="block";
+	  	}
+  }
+</script>
+
+</head>
+<body>
+	<div class=floor>
+	<P></p>
+	<form action="" method="post">
+		   <label>选择楼层:</label>
+			 <select id="select_floor">
+				  <option value="pre">All</option>
+	 			 <option value="0">一</option>
+	 			 <option value="1">二</option>
+	 			 <option value="2">三</option>
+	 			 <option value="3">四</option>
+	 		</select>
+	 		<input type="button" value="切换" onclick="change_floor()" >
+			 <p> 价格
+			<input name="jiage_1" type="text" size="5" maxlength=5>
+			~
+			<input name="jiage_2" type="text" size="5" maxlength=5>
+			<input name="chaxun" type="submit" value="查询">
+      </p>
+			</form>
+	</div>
+
+	<div class=store>
+		<div class=store_1>店铺列表 </div>
+		<div class=store_2 id="floorstore" style="overflow:scroll; overflow-x: hidden; width:130px; height:360px">
+     	<div id=floor_1>
+		  	<div class="anystore" onclick="showgoods(0)"  style="display: block">东北大饼</div>
+		 		<div class="anystore" onclick="showgoods(1)"  style="display: block">潮汕风味馆</div>
+		  	<div class="anystore" onclick="showgoods(2)"  style="display: block">隆江猪脚饭</div>
+		  	<div class="anystore" onclick="showgoods(3)"  style="display: block">潮汕风味</div>
+	  		<div class="anystore" onclick="showgoods(4)"  style="display: block">沉香美食</div>
+				<div class="anystore" onclick="showgoods(5)"  style="display: block">妈妈焖</div>
+				<div class="anystore" onclick="showgoods(6)"  style="display: block">一料理</div>
+				<div class="anystore" onclick="showgoods(7)"  style="display: block">风味之屋</div>
+				<div class="anystore" onclick="showgoods(8)"  style="display: block">金早绿点</div>
+				<div class="anystore" onclick="showgoods(9)"  style="display: block">煲仔饭</div>
+				<div class="anystore" onclick="showgoods(10)" style="display: block">韩国拌饭</div>
+				<div class="anystore" onclick="showgoods(11)" style="display: block">蒸品</div>
+				<div class="anystore" onclick="showgoods(12)" style="display: block">订食</div>
+				<div class="anystore" onclick="showgoods(13)" style="display: block">牛状元</div>
+				<div class="anystore" onclick="showgoods(14)" style="display: block">魔法沙拉</div>
+				<div class="anystore" onclick="showgoods(15)" style="display: block">杭州风味</div>
+				<div class="anystore" onclick="showgoods(16)" style="display: block">家乐煲</div>
+			</div>
+
+			<div id=floor_2>
+		  	<div class="anystore" onclick="showgoods(17)" style="display: block">大众菜品</div>
+		 		<div class="anystore" onclick="showgoods(18)" style="display: block">大众餐系列-1</div>
+		  	<div class="anystore" onclick="showgoods(19)" style="display: block">蒸笼饭</div>
+		  	<div class="anystore" onclick="showgoods(20)" style="display: block">大众餐系列-2</div>
+	  		<div class="anystore" onclick="showgoods(21)" style="display: block">粤式风味</div>
+				<div class="anystore" onclick="showgoods(22)" style="display: block">桂林风味</div>
+				<div class="anystore" onclick="showgoods(23)" style="display: block">兰州拉面</div>
+				<div class="anystore" onclick="showgoods(24)" style="display: block">西安风味</div>
+			</div>
+
+			<div id=floor_3>
+		  	<div class="anystore" onclick="showgoods(25)" style="display: block">大众餐</div>
+		 		<div class="anystore" onclick="showgoods(26)" style="display: block">中式笼仔饭</div>
+		  	<div class="anystore" onclick="showgoods(27)" style="display: block">桂林米粉/河粉</div>
+		  	<div class="anystore" onclick="showgoods(28)" style="display: block">腊味套餐</div>
+			</div>
+
+			<div id=floor_4>
+		  	<div class="anystore" onclick="showgoods(29)"  style="display: block">从一品中餐厅</div>
+			</div>
+
+		 </div>
+	 </div>
+
+	<div class=goods id="goods" style="overflow:scroll; overflow-x: hidden; width:270px; height:400px">
+  <div id="dongbeidabing">
+		<div class="anygoods" style="display:block">现磨豆浆</div>
+		<div class="anygoods" style="display:block">千层饼</div>
+		<div class="anygoods" style="display:block">鸡蛋饼</div>
+		<div class="anygoods" style="display:block">香酱饼</div>
+		<div class="anygoods" style="display:block">猪肉饼</div>
+		<div class="anygoods" style="display:block">牛肉饼</div>
+		<div class="anygoods" style="display:block">鸡蛋土豆饼</div>
+		<div class="anygoods" style="display:block">鸡蛋汉堡</div>
+		<div class="anygoods" style="display:block">东北玉米</div>
+		<div class="anygoods" style="display:block">豆沙饼</div>
+		<div class="anygoods" style="display:block">韭菜盒</div>
+		<div class="anygoods" style="display:block">番薯饼</div>
+		<div class="anygoods" style="display:block">三丝卷</div>
+		<div class="anygoods" style="display:block">手抓饼</div>
+		<div class="anygoods" style="display:block">手抓饼+鸡蛋</div>
+		<div class="anygoods" style="display:block">手抓饼+肉松</div>
+		<div class="anygoods" style="display:block">手抓饼+芝士</div>
+		<div class="anygoods" style="display:block">手抓饼+培根</div>
+		<div class="anygoods" style="display:block">手抓饼+火腿</div>
+
+	</div>
+
+	<div id="chaoshanfengweiguan">
+		<div class="anygoods" style="display:none">枸杞菜</div>
+		<div class="anygoods" style="display:none">苦瓜</div>
+		<div class="anygoods" style="display:none">金菇</div>
+		<div class="anygoods" style="display:none">豆腐</div>
+		<div class="anygoods" style="display:none">生菜</div>
+		<div class="anygoods" style="display:none">白菜</div>
+	  <div class="anygoods" style="display:none">手工面</div>
+		<div class="anygoods" style="display:none">油面</div>
+		<div class="anygoods" style="display:none">刀削面</div>
+		<div class="anygoods" style="display:none">大碗面</div>
+		<div class="anygoods" style="display:none">猪杂汤饭面肉卷汤饭面</div>
+		<div class="anygoods" style="display:none">猪肉丸汤饭面</div>
+		<div class="anygoods" style="display:none">鱼丸汤饭面</div>
+		<div class="anygoods" style="display:none">鱼片汤饭面</div>
+		<div class="anygoods" style="display:none">牛肉丸汤饭面</div>
+		<div class="anygoods" style="display:none">双丸汤饭面</div>
+		<div class="anygoods" style="display:none">杂酱面配肉汤</div>
+		<div class="anygoods" style="display:none">干面配肉汤</div>
+		<div class="anygoods" style="display:none">云吞面配肉汤</div>
+		<div class="anygoods" style="display:none">牛腩面</div>
+		<div class="anygoods" style="display:none">猪肉丸瘦肉汤饭面</div>
+		<div class="anygoods" style="display:none">鱼片瘦肉汤饭面</div>
+		<div class="anygoods" style="display:none">鱼丸瘦肉汤饭面</div>
+		<div class="anygoods" style="display:none">双丸瘦肉汤饭面</div>
+		<div class="anygoods" style="display:none">牛肉瘦肉汤饭面</div>
+		<div class="anygoods" style="display:none">猪肉丸猪杂汤饭面</div>
+		<div class="anygoods" style="display:none">双丸猪杂汤饭面</div>
+		<div class="anygoods" style="display:none">鱼丸猪杂汤饭面</div>
+		<div class="anygoods" style="display:none">鱼片猪杂汤饭面</div>
+		<div class="anygoods" style="display:none">牛肉丸猪杂汤饭面</div>
+		<div class="anygoods" style="display:none">白粥</div>
+		<div class="anygoods" style="display:none">白粥+小菜</div>
+	  <div class="anygoods" style="display:none">龙骨玉米汤</div>
+	  <div class="anygoods" style="display:none">排骨苦瓜汤</div>
+	</div>
+
+ <div id="longjiangzhujiaofan">
+	 <div class="anygoods" style="display:none">炒玉米</div>
+	 <div class="anygoods" style="display:none">娃娃菜</div>
+	 <div class="anygoods" style="display:none">酸菜</div>
+	 <div class="anygoods" style="display:none">醋溜包菜</div>
+	 <div class="anygoods" style="display:none">番茄炒蛋</div>
+	 <div class="anygoods" style="display:none">蒸丝瓜</div>
+	 <div class="anygoods" style="display:none">蒜蓉蒸茄子</div>
+	 <div class="anygoods" style="display:none">酸辣土豆丝</div>
+	 <div class="anygoods" style="display:none">土豆海带烧肉</div>
+	 <div class="anygoods" style="display:none">金针菇豆腐炒肉</div>
+	 <div class="anygoods" style="display:none">回锅肉</div>
+	 <div class="anygoods" style="display:none">鸡排肉</div>
+	 <div class="anygoods" style="display:none">糖醋咕噜肉</div>
+	 <div class="anygoods" style="display:none">子姜炒鸭</div>
+	 <div class="anygoods" style="display:none">香菇鸡</div>
+	 <div class="anygoods" style="display:none">牛腩萝卜</div>
+	 <div class="anygoods" style="display:none">木耳蒸黄鸡</div>
+ </div>
+
+ <div id="chaoshanfengwei">
+	 <div class="anygoods" style="display:block">玉米粒</div>
+	 <div class="anygoods" style="display:block">海带丝</div>
+	 <div class="anygoods" style="display:block">豆腐泡</div>
+	 <div class="anygoods" style="display:block">白豆腐</div>
+	 <div class="anygoods" style="display:block">韭菜炒蛋</div>
+	 <div class="anygoods" style="display:block">苦瓜炒蛋</div>
+	 <div class="anygoods" style="display:block">西红柿炒蛋</div>
+	 <div class="anygoods" style="display:block">茄子</div>
+	 <div class="anygoods" style="display:block">冬瓜</div>
+	 <div class="anygoods" style="display:block">土豆</div>
+	 <div class="anygoods" style="display:block">南瓜</div>
+	 <div class="anygoods" style="display:block">青菜</div>
+	 <div class="anygoods" style="display:block">蒸蛋</div>
+	 <div class="anygoods" style="display:block">娃娃菜</div>
+	 <div class="anygoods" style="display:block">空心菜</div>
+	 <div class="anygoods" style="display:block">西兰花炒肉</div>
+	 <div class="anygoods" style="display:block">云耳炒肉</div>
+	 <div class="anygoods" style="display:block">腐竹炒肉</div>
+	 <div class="anygoods" style="display:block">辣椒炒肉</div>
+	 <div class="anygoods" style="display:block">肉饼</div>
+	 <div class="anygoods" style="display:block">墨鱼丸</div>
+	 <div class="anygoods" style="display:block">牛肉丸</div>
+	 <div class="anygoods" style="display:block">鸡排肉</div>
+	 <div class="anygoods" style="display:block">小炒肉</div>
+	 <div class="anygoods" style="display:block">叉烧肉</div>
+	 <div class="anygoods" style="display:block">咸香鸡肉</div>
+	 <div class="anygoods" style="display:block">白切鸡肉</div>
+	 <div class="anygoods" style="display:block">酱油鸡肉</div>
+	 <div class="anygoods" style="display:block">脆皮肉</div>
+	 <div class="anygoods" style="display:block">可乐鸡中翅</div>
+	 <div class="anygoods" style="display:block">西兰花炒肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">云耳炒肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">腐竹炒肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">辣椒炒肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">墨鱼丸（二素一饭）</div>
+	 <div class="anygoods" style="display:block">牛肉丸（二素一饭）</div>
+	 <div class="anygoods" style="display:block">肉饼（二素一饭）</div>
+	 <div class="anygoods" style="display:block">小炒肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">叉烧肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">鸡排饭（二素一饭）</div>
+	 <div class="anygoods" style="display:block">咸香鸡肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">白切鸡肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">酱油鸡肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">脆皮鸡肉（二素一饭）</div>
+	 <div class="anygoods" style="display:block">可乐鸡中翅（二素一饭）</div>
+	 <div class="anygoods" style="display:block">炒米粉</div>
+ 	 <div class="anygoods" style="display:block">炒河粉</div>
+	 <div class="anygoods" style="display:block">炒碗面</div>
+	 <div class="anygoods" style="display:block">炒手工面</div>
+	 <div class="anygoods" style="display:block">炒桂粉</div>
+	 <div class="anygoods" style="display:block">蛋炒饭</div>
+	 <div class="anygoods" style="display:block">炒薯粉</div>
+	 <div class="anygoods" style="display:block">咖喱</div>
+	 <div class="anygoods" style="display:block">猪肝</div>
+	 <div class="anygoods" style="display:block">牛肉</div>
+	 <div class="anygoods" style="display:block">瘦肉</div>
+	 <div class="anygoods" style="display:block">牛腩</div>
+	 <div class="anygoods" style="display:block">火腿肠</div>
+	 <div class="anygoods" style="display:block">腊肠</div>
+	 <div class="anygoods" style="display:block">热狗肠</div>
+	 <div class="anygoods" style="display:block">西红柿</div>
+	 <div class="anygoods" style="display:block">老干妈</div>
+	 <div class="anygoods" style="display:block">叉烧</div>
+</div>
+
+</div>
+
+
+	<div class=money>
+	 <div class=qingdan>
+		 <form action="" method="post">
+		 <input name="yixuanze" type=button value="已选择">
+	 </form>
+	 </div>
+
+	 <div class=heji>
+		 合计：
+	 </div>
+	<div class=queren>
+     <form action="" method="post">
+		<input name="querenyuding" type=submit value="确认预订">
+	</form>
+ </div>
+	</div>
+
+</body>
+</html>
